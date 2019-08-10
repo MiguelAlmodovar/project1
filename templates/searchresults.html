@@ -1,0 +1,16 @@
+{% extends "dashboard.html" %}
+
+
+{% block body %}
+<h1>Search Results</h1>
+
+<ul style="list-style-type:none;">
+  {% for buk in buks %}
+  <li>
+    <a href="{{ url_for('index')}}">
+        <b>ISBN</b>: {{ buk.isbn }} | <b>Title</b>: {{buk.title}} | <b>Author</b>: {{buk.author}} | <b>Year of Release</b>:{{buk.year}}
+        </a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

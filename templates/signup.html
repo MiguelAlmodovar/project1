@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block body %}
+    <h1>Sign Up</h1>
+    <form action="{{ url_for('signup') }}", method="post">
+  Username:<br>
+  <input type="text" name="user" value="Username"><br>
+  Password:<br>
+  <input type="text" name="password" value="Password"><br><br>
+  <input type="submit" value="Submit">
+</form>
+    <a href="{{url_for('index')}}"}>Go back</a>
+<p color = red>{{ message }}</p>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome, {{user_id}}</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style media="screen">
+  #navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  #navbar li {
+    float: left;
+  }
+  #navbar #msg {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  #navbar li a  {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+
+  li a:hover {
+    background-color: #111;
+  }
+</style>
+</head>
+<body>
+  <div id = navbar>
+  <ul>
+    <li><a href="default.asp">ReviewBuks</a></li>
+    <li><div id= "msg">Welcome back, {{user_id}}</div></li>
+    <li><a href="{{url_for('index')}}">Logout</a></li>
+    <li style="float:right"><a><form action="{{ url_for('search') }}", method="post"><input type="text" name="search" value="Search..."><input type="submit" value="Submit">
+  </form></a></li>
+  </ul>
+</div>
+  {% block body %}
+  {% endblock %}
